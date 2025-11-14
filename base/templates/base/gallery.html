@@ -1,0 +1,15 @@
+<h2>Gallery</h2>
+
+{% for p in photos %}
+    <div style="margin-bottom:20px;">
+        <h3>{{ p.name }}</h3>
+
+        {% if p.image %}
+            <img src="{{ p.image.url }}" width="300">
+        {% else %}
+            <p>No image uploaded.</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+<a href="{% url 'upload-image' %}">Upload Another Image</a>
